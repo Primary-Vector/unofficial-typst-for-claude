@@ -21,8 +21,8 @@ It also includes:
 Add the marketplace and install:
 
 ```
-/plugin marketplace add Primary-Vector/unofficial-typst
-/plugin install unofficial-typst@unofficial-typst
+/plugin marketplace add Primary-Vector/unofficial-typst-for-claude
+/plugin install unofficial-typst@unofficial-typst-for-claude
 ```
 
 Or load directly during development:
