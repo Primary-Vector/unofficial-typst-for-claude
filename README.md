@@ -10,11 +10,11 @@ A [Claude Code](https://docs.anthropic.com/en/docs/claude-code) plugin that bund
 
 The catch is, if you're running Claude CoWork... it runs things in a locked-down Linux VM where you can't install packages.
 
-This plugin ships pre-built Typst binaries for macOS and Linux, so `typst` is on PATH the moment you install it. It also includes a Typst language skill (so Claude writes well-formed `.typ` syntax instead and a `/compile` command that goes from a natural language prompt to a finished PDF.
+This plugin ships a pre-built Typst binary for Linux ARM64 (what CoWork runs on), so `typst` is on PATH the moment you install it. It also includes a Typst language skill (so Claude writes well-formed `.typ` syntax instead and a `/compile` command that goes from a natural language prompt to a finished PDF.
 
 ## What's included
 
-- **Typst binaries** for macOS (Apple Silicon, Intel) and Linux (ARM64, x86_64), selected automatically at runtime
+- **Typst binary** for Linux ARM64 (`aarch64-unknown-linux-musl`), the architecture CoWork uses
 - **`typst` skill** — language reference so Claude writes well-formed `.typ` syntax instead of guessing
 - **`typst-packages` skill** — tells Claude to search the [Typst package registry](https://packages.typst.org) for community packages before building complex documents (Gantt charts, timelines, diagrams, etc.) from scratch
 - **`/compile` command** — goes from a natural language prompt to a finished PDF, SVG, or PNG
@@ -58,16 +58,9 @@ The plugin adds `typst` to your PATH:
 typst compile input.typ output.pdf
 ```
 
-## Bundled Platforms
+## Bundled Platform
 
-| Platform | Architecture | Target |
-|----------|-------------|--------|
-| macOS | Apple Silicon | `aarch64-apple-darwin` |
-| macOS | Intel | `x86_64-apple-darwin` |
-| Linux | ARM64 | `aarch64-unknown-linux-musl` |
-| Linux | x86_64 | `x86_64-unknown-linux-musl` |
-
-The correct binary is selected automatically at runtime.
+This plugin bundles a single binary for Linux ARM64 (`aarch64-unknown-linux-musl`), which is what Claude CoWork runs on. To add other platforms, run `./scripts/download-binaries.sh` and the wrapper script will auto-detect the right binary.
 
 ## Bundled Typst Version
 
