@@ -6,9 +6,11 @@ A [Claude Code](https://docs.anthropic.com/en/docs/claude-code) plugin that ship
 
 ## Why
 
-Claude is great at generating structured documents — resumes, reports, invoices, letters — but it has no way to turn them into PDFs. Workbench runs on locked-down Linux VMs where you can't install anything. Local Claude Code requires users to set up Typst themselves. Either way, there's friction between "write me a document" and actually getting a PDF.
+[Typst](https://typst.app) is a modern markup language for producing consistent, well-formatted documents. It compiles to PDF, has clean syntax, and is easy for LLMs to write correctly. It is a great fit for generating resumes, reports, invoices, and letters from Claude.
 
-This plugin removes that friction. It bundles Typst binaries for macOS and Linux directly in the plugin, so `typst` is on PATH the moment you install it. No package manager, no setup, no prerequisites. It also includes a Typst language skill (so Claude writes correct `.typ` syntax instead of hallucinating LaTeX) and a `/compile` command that takes you from a natural language prompt to a finished PDF in one step.
+The problem is getting Typst installed. Workbench runs on locked-down Linux VMs where you can't install anything. Local Claude Code requires users to set up Typst themselves. Either way, there is friction between "write me a document" and actually getting a PDF.
+
+This plugin removes that friction. It bundles Typst binaries for macOS and Linux directly, so `typst` is on PATH the moment you install it. No package manager, no setup, no prerequisites. It also includes a Typst language skill (so Claude writes correct `.typ` syntax instead of hallucinating LaTeX) and a `/compile` command that takes you from a natural language prompt to a finished PDF in one step.
 
 ## Installation
 
@@ -62,7 +64,7 @@ The correct binary is selected automatically at runtime.
 
 ## Bundled Typst Version
 
-**v0.14.2** — Binaries are sourced from [typst/typst releases](https://github.com/typst/typst/releases).
+**v0.14.2** - Binaries are sourced from [typst/typst releases](https://github.com/typst/typst/releases).
 
 To update to a newer release:
 
