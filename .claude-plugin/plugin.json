@@ -5,6 +5,6 @@
   "author": {
     "name": "Primary Vector Inc."
   },
-  "license": "MIT",
+  "license": "Apache-2.0",
   "keywords": ["typst", "pdf", "typesetting", "documents"]
 }
