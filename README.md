@@ -1,16 +1,23 @@
 # unofficial-typst-for-claude
 
-A [Claude Code](https://docs.anthropic.com/en/docs/claude-code) plugin that ships pre-built [Typst](https://typst.app) binaries, so you can generate PDFs from markup in any Claude environment.
+A [Claude Code](https://docs.anthropic.com/en/docs/claude-code) plugin that bundles [Typst](https://typst.app) binaries so Claude can generate PDFs without any external setup.
 
 > **This is an unofficial community plugin.** It is not affiliated with or endorsed by the Typst project. Typst is created and maintained by [typst/typst](https://github.com/typst/typst) and licensed under the Apache License 2.0. All credit for the Typst typesetting system belongs to its authors and contributors.
 
 ## Why
 
-[Typst](https://typst.app) is a modern markup language for producing consistent, well-formatted documents. It compiles to PDF, has clean syntax, and is easy for LLMs to write correctly. It is a great fit for generating resumes, reports, invoices, and letters from Claude.
+[Typst](https://typst.app) is a markup language that compiles to PDF, SVG, and PNG. Its syntax is clean enough that LLMs can write it pretty well which makes it nice for generating resumes, invoices, or other structured documents from Claude.
 
-The problem is getting Typst installed. Workbench runs on locked-down Linux VMs where you can't install anything. Local Claude Code requires users to set up Typst themselves. Either way, there is friction between "write me a document" and actually getting a PDF.
+The catch is, if you're running Claude CoWork... it runs things in a locked-down Linux VM where you can't install packages.
 
-This plugin removes that friction. It bundles Typst binaries for macOS and Linux directly, so `typst` is on PATH the moment you install it. No package manager, no setup, no prerequisites. It also includes a Typst language skill (so Claude writes correct `.typ` syntax instead of hallucinating LaTeX) and a `/compile` command that takes you from a natural language prompt to a finished PDF in one step.
+This plugin ships pre-built Typst binaries for macOS and Linux, so `typst` is on PATH the moment you install it. It also includes a Typst language skill (so Claude writes well-formed `.typ` syntax instead and a `/compile` command that goes from a natural language prompt to a finished PDF.
+
+## What's included
+
+- **Typst binaries** for macOS (Apple Silicon, Intel) and Linux (ARM64, x86_64), selected automatically at runtime
+- **`typst` skill** — language reference so Claude writes well-formed `.typ` syntax instead of guessing
+- **`typst-packages` skill** — tells Claude to search the [Typst package registry](https://packages.typst.org) for community packages before building complex documents (Gantt charts, timelines, diagrams, etc.) from scratch
+- **`/compile` command** — goes from a natural language prompt to a finished PDF, SVG, or PNG
 
 ## Installation
 

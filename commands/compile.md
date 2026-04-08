@@ -1,17 +1,21 @@
 ---
-description: Generate a PDF from a natural language description or compile an existing .typ file
+description: Generate a document from a natural language description or compile an existing .typ file. Outputs PDF by default; also supports SVG and PNG.
 ---
 
 # Typst Compile
 
-You have been asked to create a PDF document. The user's request is: "$ARGUMENTS"
+You have been asked to create a document. The user's request is: "$ARGUMENTS"
 
 Follow this workflow:
 
-## Step 1: Determine mode
+## Step 1: Determine mode and output format
 
-- If the argument ends in `.typ`, this is a **compile-only** request. Skip to Step 3.
+- If the argument ends in `.typ`, this is a **compile-only** request. Skip to Step 2.
 - Otherwise, this is a **generate-and-compile** request. Continue to Step 2.
+
+Determine the output format from the user's request:
+- Default is **PDF** unless the user asks for something else.
+- If they mention PNG, SVG, or image output, use that format instead.
 
 ## Step 2: Generate the .typ file
 
@@ -24,14 +28,34 @@ Based on the user's description, create a Typst document:
 
 Write the file using the Write tool.
 
-## Step 3: Compile to PDF
+## Step 3: Compile
 
-Run:
+Run the appropriate command based on output format:
+
+**PDF (default):**
 ```
 typst compile <filename>.typ
 ```
 
-This produces `<filename>.pdf` in the same directory.
+**SVG:**
+```
+typst compile <filename>.typ <filename>.svg
+```
+
+**PNG:**
+```
+typst compile <filename>.typ <filename>.png
+```
+
+For PNG, you can control resolution with `--ppi` (default 144):
+```
+typst compile <filename>.typ <filename>.png --ppi 300
+```
+
+For multi-page documents exported to PNG or SVG, use a page number template:
+```
+typst compile <filename>.typ <filename>-{p}.png
+```
 
 ## Step 4: Handle errors
 
@@ -44,6 +68,6 @@ If compilation fails:
 ## Step 5: Report result
 
 Tell the user:
-- The PDF file path
+- The output file path(s)
 - A brief summary of what was created
 - Any notable design choices you made

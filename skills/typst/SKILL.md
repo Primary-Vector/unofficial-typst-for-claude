@@ -2,13 +2,19 @@
 name: typst
 description: >
   Use when creating, editing, or compiling Typst (.typ) documents, or when
-  the user asks to generate PDFs from markup. Typst is a modern typesetting
-  system — an alternative to LaTeX with simpler syntax.
+  the user asks to generate PDFs, SVGs, or PNGs from markup. Typst is a modern
+  typesetting system — an alternative to LaTeX with simpler syntax.
 ---
 
 # Typst Reference
 
-Typst compiles `.typ` files to PDF. Compile with: `typst compile input.typ output.pdf`
+Typst compiles `.typ` files to PDF (default), SVG, or PNG.
+
+```
+typst compile input.typ output.pdf
+typst compile input.typ output.svg
+typst compile input.typ output.png
+```
 
 ## Document Structure
 
