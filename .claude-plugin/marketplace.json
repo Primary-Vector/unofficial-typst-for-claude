@@ -1,20 +1,17 @@
 {
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "unofficial-typst",
+  "description": "Typst typesetting system with bundled binaries for Claude Code",
   "owner": {
     "name": "Primary Vector Inc."
-  },
-  "metadata": {
-    "description": "Typst typesetting system with bundled binaries for Claude Code"
   },
   "plugins": [
     {
       "name": "unofficial-typst",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/Primary-Vector/unofficial-typst-for-claude.git"
-      },
+      "source": "./",
       "description": "Typst typesetting system with bundled binaries — generate PDFs, SVGs, and PNGs from markup",
-      "version": "0.1.0"
+      "version": "0.1.0",
+      "category": "development"
     }
   ]
 }
