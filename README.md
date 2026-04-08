@@ -1,20 +1,14 @@
-# unofficial-typst
+# unofficial-typst-for-claude
 
-A [Claude Code](https://docs.anthropic.com/en/docs/claude-code) plugin that ships pre-built [Typst](https://typst.app) binaries, so you can generate PDFs from markup in any Claude environment — including locked-down VMs like Claude Code Workbench where you can't install software.
+A [Claude Code](https://docs.anthropic.com/en/docs/claude-code) plugin that ships pre-built [Typst](https://typst.app) binaries, so you can generate PDFs from markup in any Claude environment.
 
 > **This is an unofficial community plugin.** It is not affiliated with or endorsed by the Typst project. Typst is created and maintained by [typst/typst](https://github.com/typst/typst) and licensed under the Apache License 2.0. All credit for the Typst typesetting system belongs to its authors and contributors.
 
-## The Problem
+## Why
 
-Claude Code Workbench runs on locked-down Linux VMs with no package manager access. If you want Claude to generate a PDF — a resume, a report, an invoice — there's no way to install a typesetting tool. Even in local Claude Code, requiring users to install Typst adds friction.
+Claude is great at generating structured documents — resumes, reports, invoices, letters — but it has no way to turn them into PDFs. Workbench runs on locked-down Linux VMs where you can't install anything. Local Claude Code requires users to set up Typst themselves. Either way, there's friction between "write me a document" and actually getting a PDF.
 
-## The Solution
-
-This plugin bundles Typst binaries directly. Install the plugin, and `typst` is available on PATH. No setup, no package manager, no prerequisites.
-
-It also includes:
-- A **Typst language skill** so Claude writes correct `.typ` syntax instead of guessing
-- A **`/compile` command** that goes from natural language prompt to PDF in one step
+This plugin removes that friction. It bundles Typst binaries for macOS and Linux directly in the plugin, so `typst` is on PATH the moment you install it. No package manager, no setup, no prerequisites. It also includes a Typst language skill (so Claude writes correct `.typ` syntax instead of hallucinating LaTeX) and a `/compile` command that takes you from a natural language prompt to a finished PDF in one step.
 
 ## Installation
 
@@ -28,7 +22,7 @@ Add the marketplace and install:
 Or load directly during development:
 
 ```bash
-claude --plugin-dir ./unofficial-typst
+claude --plugin-dir ./unofficial-typst-for-claude
 ```
 
 ## Usage
