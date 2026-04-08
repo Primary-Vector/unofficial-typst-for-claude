@@ -1,9 +1,10 @@
 {
-  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "unofficial-typst",
-  "description": "Typst typesetting system with bundled binaries for Claude Code",
   "owner": {
     "name": "Primary Vector Inc."
+  },
+  "metadata": {
+    "description": "Typst typesetting system with bundled binaries for Claude Code"
   },
   "plugins": [
     {
