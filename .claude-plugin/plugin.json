@@ -3,7 +3,7 @@
   "description": "Typst typesetting system with bundled binaries — generate PDFs from markup in any Claude environment",
   "version": "0.1.0",
   "author": {
-    "name": "Jon"
+    "name": "Primary Vector Inc."
   },
   "license": "MIT",
   "keywords": ["typst", "pdf", "typesetting", "documents"]
