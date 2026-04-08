@@ -9,8 +9,11 @@
   "plugins": [
     {
       "name": "unofficial-typst",
-      "source": ".",
-      "description": "Typst typesetting system with bundled binaries — generate PDFs from markup in any Claude environment",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/Primary-Vector/unofficial-typst-for-claude.git"
+      },
+      "description": "Typst typesetting system with bundled binaries — generate PDFs, SVGs, and PNGs from markup",
       "version": "0.1.0"
     }
   ]
